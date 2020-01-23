@@ -463,7 +463,7 @@ class DataLoader:
             pubdate = datetime.strptime(bib_scalar(bib, 'pubdate'), '%Y%m%d')
             fam_raw = bib_scalar(bib, 'family_id')
             family_id = int(fam_raw) if fam_raw != None else fam_raw
-            assign_applic_raw = bib.get('assign_applic')
+            assign_applic_raw = bib.get('assign_applic', [])
             assign_applic = '|'.join(assign_applic_raw) if len(assign_applic_raw) > 0 else ""
         except KeyError, exc:
             raise RuntimeError("Document is missing mandatory biblio field (KeyError: {})".format(exc))
