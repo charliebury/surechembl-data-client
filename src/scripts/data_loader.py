@@ -146,7 +146,7 @@ class DataLoader:
                      Column('scpn',              String(50),    unique=True),
                      Column('published',         Date()),
                      Column('life_sci_relevant', SmallInteger()),
-                     Column('assign_applic',     String(1000)),                     
+                     Column('assign_applic',     String(4000)),                     
                      Column('family_id',         Integer))
 
         self.titles = Table('schembl_document_title', self.metadata,
